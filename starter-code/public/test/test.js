@@ -18,13 +18,7 @@ QUnit.module('Article Constructor', function() {
 QUnit.module('Article Class', function() {
   QUnit.test('Article.all should be an array', function(assert) {
     //TODO: write a test for the all articles property
-    // var dummyObjArray = [
-    //   {author: 'Jade', authorUrl: 'authorUrl', body: 'body', category: 'category', publishedOn: 'publishedOn', title: 'title'},
-    //   {author: 'Martin', authorUrl: 'authorUrl', body: 'body', category: 'category', publishedOn: 'publishedOn', title: 'title'},
-    //   {author: 'Ivy', authorUrl: 'authorUrl', body: 'body', category: 'category', publishedOn: 'publishedOn', title: 'title'}
-    // ]
-    // Article.loadAll(dummyObjArray);
-    
+
     assert.ok(Array.isArray(Article.all));
   });
   QUnit.test('Article.loadAll should set an array of Article instances', function(assert) {
