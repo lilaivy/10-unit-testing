@@ -11,15 +11,21 @@ QUnit.module('Article Constructor', function() {
     //TODO: verify that an instance of article has a toHtml method
     var options = {author: 'author', authorUrl: 'authorUrl', body: 'body', category: 'category', publishedOn: 'publishedOn', title: 'title'}
     var iArticle = new Article(options);
-    assert.equal(typeof iArticle.toHtml, 'function', 'is a valid method');
+    assert.strictEqual(typeof iArticle.toHtml, 'function', 'is a valid method');
   });
 });
 
 QUnit.module('Article Class', function() {
   QUnit.test('Article.all should be an array', function(assert) {
     //TODO: write a test for the all articles property
+    // var dummyObjArray = [
+    //   {author: 'Jade', authorUrl: 'authorUrl', body: 'body', category: 'category', publishedOn: 'publishedOn', title: 'title'},
+    //   {author: 'Martin', authorUrl: 'authorUrl', body: 'body', category: 'category', publishedOn: 'publishedOn', title: 'title'},
+    //   {author: 'Ivy', authorUrl: 'authorUrl', body: 'body', category: 'category', publishedOn: 'publishedOn', title: 'title'}
+    // ]
+    // Article.loadAll(dummyObjArray);
     
-    assert.ok(Article.all);
+    assert.ok(Array.isArray(Article.all));
   });
   QUnit.test('Article.loadAll should set an array of Article instances', function(assert) {
     //TODO: write a test for article loadAll
@@ -32,7 +38,7 @@ QUnit.module('Article Class', function() {
     ]
 
     Article.loadAll(dummyObjArray);
-    assert.ok(Article.all[0]);
+    assert.strictEqual(typeof Article.all[0], 'object');
 
     delete Article.all;
   });
